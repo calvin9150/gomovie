@@ -1,22 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 
-import { getMovieInfo, getWeeklyMovies } from "../actions/movie";
+import { getWeeklyMovies } from "../actions/movie";
 import useAsync from "../hooks/useAsync";
 
 function Home() {
   const weeklyMovies = useAsync(getWeeklyMovies);
-  const info = useAsync(getMovieInfo);
+  // const info = useAsync(getMovieInfo);
 
-  console.log(`weeklyMovies.data`);
-  console.log(weeklyMovies.data);
-  console.log(`info.data`);
-  console.log(info.data);
+  console.log(`weeklyMovies`);
+  console.log(weeklyMovies);
+  // console.log(`info.data`);
+  // console.log(info.data);
 
   return (
     <>
       <Container>
-        {info.data?.items.map((v, i) => (
+        {weeklyMovies.data?.items.map((v, i) => (
           <Item key={i}>
             <img src={v.image} alt="movieImg" />
           </Item>

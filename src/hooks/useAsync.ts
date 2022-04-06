@@ -5,14 +5,6 @@ interface Error {
   errorCode: string;
 }
 
-interface Data {
-  lastBuildDate: Date | null;
-  total: number;
-  start: number;
-  display: number;
-  items: Item[];
-}
-
 interface Item {
   title: string;
   link: string;
@@ -22,6 +14,14 @@ interface Item {
   director: string;
   actor: string;
   userRating: string;
+}
+
+interface Data {
+  lastBuildDate: Date | null;
+  total: number;
+  start: number;
+  display: number;
+  items: Item[];
 }
 
 type Action =
@@ -83,7 +83,6 @@ function reducer(state: State = initialState, action: Action) {
   }
 }
 
-// 데이터를 가져오는 과정에 대한 상태 반환
 function useAsync(callback: Function, deps = []) {
   const [state, dispatch] = useReducer(reducer, {
     loading: false,
@@ -103,6 +102,7 @@ function useAsync(callback: Function, deps = []) {
 
   useEffect(() => {
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps);
 
   return state;
