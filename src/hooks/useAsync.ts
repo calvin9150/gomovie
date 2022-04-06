@@ -1,27 +1,27 @@
 import { useReducer, useEffect } from "react";
 
 interface Error {
-  errorMessage: String;
-  errorCode: String;
+  errorMessage: string;
+  errorCode: string;
 }
 
 interface Data {
   lastBuildDate: Date | null;
-  total: Number;
-  start: Number;
-  display: Number;
+  total: number;
+  start: number;
+  display: number;
   items: Item[];
 }
 
 interface Item {
-  title: String;
-  link: String;
-  image: String;
-  subtitle: String;
-  pubDate: String;
-  director: String;
-  actor: String;
-  userRating: String;
+  title: string;
+  link: string;
+  image: string;
+  subtitle: string;
+  pubDate: string;
+  director: string;
+  actor: string;
+  userRating: string;
 }
 
 type Action =

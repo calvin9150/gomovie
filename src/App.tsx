@@ -1,5 +1,6 @@
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import styled from "styled-components";
 
 import "./App.css";
 import Header from "./components/Header";
@@ -8,14 +9,33 @@ import Home from "./pages/Home";
 
 function App() {
   return (
-    <div className="App">
+    <Container className="App">
       <Header />
-      <Routes>
-        <Route path="/home" element={<Home />} />
-        <Route path="about" element={<About />} />
-      </Routes>
-    </div>
+      <Main>
+        <Routes>
+          <Route path="" element={<Home />} />
+          <Route path="about" element={<About />} />
+        </Routes>
+      </Main>
+    </Container>
   );
 }
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+`;
+
+const Main = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: lightgreen;
+`;
 
 export default App;

@@ -11,9 +11,9 @@ function Header() {
 
   return (
     <Container>
-      <Logo onClick={() => onClickMenu("home")}>영화를보자</Logo>
+      <Logo onClick={() => onClickMenu("")}>영화를보자</Logo>
       <Menu>
-        <div onClick={() => onClickMenu("home")}>HOME</div>
+        <div onClick={() => onClickMenu("")}>HOME</div>
         <div onClick={() => onClickMenu("about")}>ABOUT</div>
       </Menu>
     </Container>
